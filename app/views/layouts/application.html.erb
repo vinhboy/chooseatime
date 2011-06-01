@@ -8,6 +8,14 @@
 </head>
 <body>
 
+<div id="header">
+  <img src="/images/chooseatime.png">
+</div>
+
+<% if user_signed_in? %>
+  Signed in as <%= current_user.email %>. Not you?
+<% end %>
+
 <%= yield %>
 
 </body>

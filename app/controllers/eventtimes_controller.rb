@@ -2,7 +2,8 @@ class EventtimesController < ApplicationController
   # GET /eventtimes
   # GET /eventtimes.xml
   def index
-    @eventtimes = Eventtime.all
+    @event = Event.find(params[:event_id])
+    @eventtimes = @event.eventtimes
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +25,7 @@ class EventtimesController < ApplicationController
   # GET /eventtimes/new
   # GET /eventtimes/new.xml
   def new
-    @eventtime = Eventtime.new
+    @event = Event.find(params[:event_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,11 +41,12 @@ class EventtimesController < ApplicationController
   # POST /eventtimes
   # POST /eventtimes.xml
   def create
-    @eventtime = Eventtime.new(params[:eventtime])
-
+    @event = Event.find(params[:event_id])
+    @eventtime = @event.eventtimes.create(params[:eventtime])
+        
     respond_to do |format|
-      if @eventtime.save
-        format.html { redirect_to(@eventtime, :notice => 'Eventtime was successfully created.') }
+      if @event.save
+        format.html { redirect_to(@event, :notice => 'Eventtime was successfully created.') }
         format.xml  { render :xml => @eventtime, :status => :created, :location => @eventtime }
       else
         format.html { render :action => "new" }

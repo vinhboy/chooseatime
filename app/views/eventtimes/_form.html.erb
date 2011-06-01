@@ -1,5 +1,5 @@
-<%= form_for(@eventtime) do |f| %>
-  <% if @eventtime.errors.any? %>
+<%= form_for([@event,@event.eventtimes.build]) do |f| %>
+  <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@eventtime.errors.count, "error") %> prohibited this eventtime from being saved:</h2>
 
@@ -22,10 +22,6 @@
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :event %><br />
-    <%= f.text_field :event %>
   </div>
   <div class="actions">
     <%= f.submit %>

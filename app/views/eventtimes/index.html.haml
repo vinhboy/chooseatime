@@ -1,0 +1,21 @@
+%h1 Listing eventtimes
+%table
+  %tr
+    %th Start
+    %th End
+    %th Description
+    %th Event
+    %th
+    %th
+    %th
+  - @eventtimes.each do |eventtime|
+    %tr
+      %td= eventtime.start
+      %td= eventtime.end
+      %td= eventtime.description
+      %td= eventtime.event.id
+      %td= link_to 'Show', event_eventtimes_path
+      %td/
+    %td/
+%br/
+= link_to 'New Eventtime', new_event_eventtime_path

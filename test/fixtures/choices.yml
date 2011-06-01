@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  eventtime: 
+  user: 
+  option: MyString
+
+two:
+  eventtime: 
+  user: 
+  option: MyString

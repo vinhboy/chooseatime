@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.all
+    @events = current_user.events
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.xml
   def create
-    @event = Event.new(params[:event])
+    @event = current_user.events.create(params[:event])
 
     respond_to do |format|
       if @event.save

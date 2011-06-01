@@ -16,14 +16,14 @@
     <td><%= eventtime.start %></td>
     <td><%= eventtime.end %></td>
     <td><%= eventtime.description %></td>
-    <td><%= eventtime.event %></td>
-    <td><%= link_to 'Show', eventtime %></td>
-    <td><%= link_to 'Edit', edit_eventtime_path(eventtime) %></td>
-    <td><%= link_to 'Destroy', eventtime, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= eventtime.event.id %></td>
+    <td><%= link_to 'Show', event_eventtimes_path %></td>
+    <td><%#= link_to 'Edit', edit_event_eventtime_path(eventtime) %></td>
+    <td><%#= link_to 'Destroy', eventtime, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Eventtime', new_eventtime_path %>
+<%= link_to 'New Eventtime', new_event_eventtime_path %>

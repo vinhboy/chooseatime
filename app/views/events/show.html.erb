@@ -10,6 +10,9 @@
   <%= @event.description %>
 </p>
 
+<p>
+  <%= link_to 'Event Times', event_eventtimes_path(@event) %>
+</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

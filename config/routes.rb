@@ -1,7 +1,9 @@
 ChooseatimeCom::Application.routes.draw do
-  resources :eventtimes
+  resources :choices
 
-  resources :events
+  resources :events do
+    resources :eventtimes
+  end
 
   get "home/index"
 
