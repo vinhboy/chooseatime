@@ -15,7 +15,7 @@
       %td= eventtime.description
       %td= eventtime.event.id
       %td= link_to 'Show', event_eventtimes_path
-      %td/
-    %td/
-%br/
+      -#%td= link_to 'Edit', edit_event_eventtime_path(eventtime)
+      -#%td= link_to 'Destroy', eventtime, :confirm => 'Are you sure?', :method => :delete
+%br
 = link_to 'New Eventtime', new_event_eventtime_path
